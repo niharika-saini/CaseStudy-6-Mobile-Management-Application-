@@ -7,22 +7,21 @@ import javax.persistence.Table;
 
 // Entity Annotation
 @Entity
-@Table(name="mobiledetails")
+@Table(name="mobiledetail")
 
 // Mobile Class
 public class Mobile {
 	
 	// Mobile Details 
-	
-	
+
+	//Id Annotaion
+	@Id
+	private String mobileId;
 	private String mobileName;
 	private String mobileTYPE;
 	private int mobilePrice;
 	private int mobileWarenty;
-	
-	//Id Annotaion
-	@Id
-	private int mobileIMEINumber;
+	private String mobileIMEINumber;
 	
 	public String getMobileName() {
 		return mobileName;
@@ -31,9 +30,21 @@ public class Mobile {
 	
 	// Getter and Setters 
 	
+	
+	
 	public void setMobileName(String mobileName) {
 		this.mobileName = mobileName;
 	}
+	public String getMobileId() {
+		return mobileId;
+	}
+
+
+	public void setMobileId(String mobileId) {
+		this.mobileId = mobileId;
+	}
+
+
 	public String getMobileTYPE() {
 		return mobileTYPE;
 	}
@@ -52,11 +63,11 @@ public class Mobile {
 	public void setMobileWarenty(int mobileWarenty) {
 		this.mobileWarenty = mobileWarenty;
 	}
-	public int getMobileIMEINumber() {
+	public String getMobileIMEINumber() {
 		return mobileIMEINumber;
 	}
-	public void setMobileIMEINumber(int mobileIMEINumber) {
-		this.mobileIMEINumber = mobileIMEINumber;
+	public String setMobileIMEINumber(String mobileIMEINumber) {
+		return this.mobileIMEINumber = mobileIMEINumber;
 	}
 	
 	
@@ -68,7 +79,7 @@ public class Mobile {
 	
 	// Param Constructor 
 	
-	public Mobile(String mobileName, String mobileTYPE, int mobilePrice, int mobileWarenty, int mobileIMEINumber) {
+	public Mobile(String mobileName, String mobileTYPE, int mobilePrice, int mobileWarenty, String mobileIMEINumber) {
 		super();
 		this.mobileName = mobileName;
 		this.mobileTYPE = mobileTYPE;
@@ -76,15 +87,20 @@ public class Mobile {
 		this.mobileWarenty = mobileWarenty;
 		this.mobileIMEINumber = mobileIMEINumber;
 	}
-	
-	
+
 	// To String Method 
-	
+
 	@Override
 	public String toString() {
-		return "Mobile [mobileName=" + mobileName + ", mobileTYPE=" + mobileTYPE + ", mobilePrice=" + mobilePrice
-				+ ", mobileWarenty=" + mobileWarenty + ", mobileIMEINumber=" + mobileIMEINumber + "]";
+		return "Mobile [mobileId=" + mobileId + ", mobileName=" + mobileName + ", mobileTYPE=" + mobileTYPE
+				+ ", mobilePrice=" + mobilePrice + ", mobileWarenty=" + mobileWarenty + ", mobileIMEINumber="
+				+ mobileIMEINumber + "]";
 	}
+	
+	
+	
+	
+	
 	
 	
 	
